@@ -33,11 +33,11 @@ function love.load()
 		}
 	}]]--
 
-	player = {
-		image = love.graphics.newImage("assets/link.png"),
-		x = windowWidth / 2,
-		y = windowHeight / 2,
-	}
+	player = {}
+	player.image = love.graphics.newImage("assets/link.png")
+	player.x = windowWidth / 2 - player.image:getWidth()
+	player.y = windowHeight / 2 - player.image:getHeight()
+	
 
 	-- Update callback for Custom Layer
 	--[[function spriteLayer:update(dt)
@@ -76,6 +76,7 @@ function love.update(dt)
 		love.graphics.setColor(1, 0, 0)
 		map:box2d_draw()
 
+		love.graphics.setColor(1, 1, 1)
 		love.graphics.draw(player.image, player.x, player.y)
 
 	--[[ Translate world so that player is always centred
