@@ -45,9 +45,10 @@ return {
 		-- idk how to do this yet
 	end,
 	drain = function(target, user)
-		local damage = target.status.hp / 2
+		--[[local damage = target.status.hp / 2
 		target.status.hp = target.status.hp - damage
-		user.status.hp = user.status.hp + damage
+		user.status.hp = user.status.hp + damage]]--
+		print(target.name)
 	end,
 	heal = function(target)
 		local heal = target.stats.hp * 0.5 * 100
